@@ -26,3 +26,7 @@ hs_err_pid*
 /.idea/jarRepositories.xml
 /.idea/misc.xml
 /.idea/vcs.xml
+/.idea/
+/batch-documenti-personali.iml
+/compress-and-protect-doc/target/
+/compress-and-protect-doc/compress-and-protect-doc.iml
