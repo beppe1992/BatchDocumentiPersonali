@@ -1,6 +1,6 @@
 package it.personalproject.batchdocumentipersonali.compressandprotectdoc;
 
-import it.personalproject.batchdocumentipersonali.compressandprotectdoc.pdfutils.PdfProtectionUtils;
+import it.personalproject.batchdocumentipersonali.common.ProtezionePdfUtils;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -12,11 +12,8 @@ import java.util.Collection;
 public class CompressAndProtectDocMain
 {
 
-    private static final String ONLY_COMPRESS = "ONLY_COMPRESS";
-
     private static final String ONLY_PROTECT = "ONLY_PROTECT";
 
-    private static final String COMPRESS_PROTECT = "COMPRESS_PROTECT";
 
     public static void main(String[] args) throws IOException
     {
@@ -30,18 +27,14 @@ public class CompressAndProtectDocMain
 
         Collection<File> listaFile = recuperaListaFiles();
 
-        String password = readPassword();
+        if ( ONLY_PROTECT.equals(tipoRun) ){
+            String password = readPassword();
 
-
-        if(ONLY_COMPRESS.equals(tipoRun)){
-
-        } else if ( ONLY_PROTECT.equals(tipoRun) ){
             for (File file : listaFile) {
-                PdfProtectionUtils.protectAndSavePdf(file,password);
+                ProtezionePdfUtils.protectAndSavePdf(file, password);
             }
-        } else if ( COMPRESS_PROTECT.equals(tipoRun) ){
-
-        } else{
+        }
+        else{
             System.out.println("PARAMETRO TIPO RUN NON GESTITO");
             System.exit(1);
         }

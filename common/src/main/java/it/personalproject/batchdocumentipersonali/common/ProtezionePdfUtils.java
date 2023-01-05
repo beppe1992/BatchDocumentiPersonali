@@ -1,13 +1,24 @@
-package it.personalproject.batchdocumentipersonali.compressandprotectdoc.pdfutils;
+package it.personalproject.batchdocumentipersonali.common;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.pdfbox.contentstream.operator.Operator;
+import org.apache.pdfbox.cos.COSArray;
+import org.apache.pdfbox.cos.COSString;
+import org.apache.pdfbox.pdfparser.PDFStreamParser;
+import org.apache.pdfbox.pdfwriter.ContentStreamWriter;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageTree;
+import org.apache.pdfbox.pdmodel.common.PDStream;
 import org.apache.pdfbox.pdmodel.encryption.AccessPermission;
 import org.apache.pdfbox.pdmodel.encryption.StandardProtectionPolicy;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.util.List;
 
-public class PdfProtectionUtils
+public class ProtezionePdfUtils
 {
     public static void protectAndSavePdf(File fileToWork,String password) throws IOException
     {

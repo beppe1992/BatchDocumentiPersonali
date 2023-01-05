@@ -30,3 +30,5 @@ hs_err_pid*
 /batch-documenti-personali.iml
 /compress-and-protect-doc/target/
 /compress-and-protect-doc/compress-and-protect-doc.iml
+/common/common.iml
+/manipulate-doc/manipulate-doc.iml

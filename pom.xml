@@ -12,6 +12,8 @@
 
     <modules>
         <module>compress-and-protect-doc</module>
+        <module>common</module>
+        <module>manipulate-doc</module>
     </modules>
 
     <properties>
